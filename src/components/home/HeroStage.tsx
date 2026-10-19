@@ -19,7 +19,7 @@ export function HeroStage() {
 
   return (
     <div
-      className="relative mx-auto mt-16 max-w-5xl text-left [perspective:1400px]"
+      className="relative mx-auto mt-14 max-w-5xl text-left [perspective:1400px]"
       onPointerMove={(e) => {
         if (reduce || e.pointerType !== "mouse") return;
         const r = e.currentTarget.getBoundingClientRect();

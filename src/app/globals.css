@@ -18,10 +18,24 @@
   --on-accent: #ffffff;
   --code-bg: #dccdf0;
   --grad-1: #e34234;
-  --grad-2: #b0306e;
-  --grad-3: #4a1d96;
+  --grad-2: #ff6a4d;
+  --grad-3: #c42f1f;
   --glow: rgba(227, 66, 52, 0.22);
   --hi: #d4ff3f;
+  --shape-1: #e34234;
+  --shape-1-light: #ff8a73;
+  --shape-1-dark: #a3241a;
+  --shape-2: #d4ff3f;
+  --shape-2-light: #f2ffb8;
+  --shape-2-dark: #8db300;
+  --shape-3: #9b6fe0;
+  --shape-3-light: #e2d2ff;
+  --shape-3-dark: #5a2fa6;
+  --shape-line: #140c22;
+  --logo-bg: #e34234;
+  --logo-spark: #d4ff3f;
+  --logo-ink: #140c22;
+  --on-shape-1: #ffffff;
 }
 [data-theme="dark"] {
   /* Midnight — jet black #0B0B0B, hot pink #FF2DA8, chartreuse #D4FF3F */
@@ -39,10 +53,24 @@
   --on-accent: #0b0b0b;
   --code-bg: #101010;
   --grad-1: #ff2da8;
-  --grad-2: #ff7ad0;
-  --grad-3: #d4ff3f;
+  --grad-2: #ff7fcc;
+  --grad-3: #ff2da8;
   --glow: rgba(255, 45, 168, 0.22);
   --hi: #ff2da8;
+  --shape-1: #ff2da8;
+  --shape-1-light: #ff7ccb;
+  --shape-1-dark: #b8146f;
+  --shape-2: #d4ff3f;
+  --shape-2-light: #f2ffb8;
+  --shape-2-dark: #8db300;
+  --shape-3: #ff2da8;
+  --shape-3-light: #ff7ccb;
+  --shape-3-dark: #b8146f;
+  --shape-line: #f7f7f2;
+  --logo-bg: #ff2da8;
+  --logo-spark: #d4ff3f;
+  --logo-ink: #0b0b0b;
+  --on-shape-1: #0b0b0b;
 }
 [data-theme="ivory"] {
   /* Ivory — ivory, emerald green, vermilion */
@@ -60,10 +88,24 @@
   --on-accent: #ffffff;
   --code-bg: #f6f1e3;
   --grad-1: #0b8a5c;
-  --grad-2: #0e6b72;
-  --grad-3: #e34234;
+  --grad-2: #13b07a;
+  --grad-3: #087049;
   --glow: rgba(11, 138, 92, 0.2);
   --hi: #9fe8c6;
+  --shape-1: #e34234;
+  --shape-1-light: #ff8a73;
+  --shape-1-dark: #a3241a;
+  --shape-2: #19a974;
+  --shape-2-light: #a6f2cf;
+  --shape-2-dark: #086240;
+  --shape-3: #0b8a5c;
+  --shape-3-light: #6fdcae;
+  --shape-3-dark: #06573a;
+  --shape-line: #1d1b14;
+  --logo-bg: #0b8a5c;
+  --logo-spark: #e34234;
+  --logo-ink: #1d1b14;
+  --on-shape-1: #ffffff;
 }
 
 @theme inline {
@@ -102,17 +144,16 @@ body { background: var(--bg); color: var(--text); -webkit-font-smoothing: antial
 }
 
 /* ---------- landing-page effects ---------- */
-.aurora { position: absolute; inset: -20% -10% auto; height: 900px; filter: blur(70px); opacity: 0.55; pointer-events: none; }
-[data-theme="dark"] .aurora { opacity: 0.5; }
-.aurora span { position: absolute; border-radius: 9999px; mix-blend-mode: normal; animation: drift 18s ease-in-out infinite alternate; }
-.aurora span:nth-child(1) { left: 12%; top: 8%; width: 520px; height: 420px; background: var(--accent); }
-.aurora span:nth-child(2) { right: 10%; top: 0; width: 460px; height: 380px; background: var(--accent-2); animation-delay: -6s; animation-duration: 22s; }
-.aurora span:nth-child(3) { left: 40%; top: 30%; width: 420px; height: 340px; background: var(--accent-3); animation-delay: -12s; animation-duration: 26s; opacity: 0.7; }
-@keyframes drift {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.12); }
-  100% { transform: translate(-50px, 20px) scale(0.95); }
-}
+.hatch { background-image: repeating-linear-gradient(-55deg, transparent 0 7px, color-mix(in srgb, var(--text) 6%, transparent) 7px 8px); }
+
+.footer-wordmark { font-size: clamp(3.5rem, 15.5vw, 15rem); color: transparent; -webkit-text-stroke: 1.5px var(--line); margin-bottom: -0.12em; }
+
+.art-drift-a, .art-drift-b { transform-box: fill-box; transform-origin: center; }
+.art-spin { transform-box: fill-box; transform-origin: center; animation: art-sway 14s ease-in-out infinite; }
+@keyframes art-sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(5deg) translateY(-8px); } }
+.art-drift-a { animation: art-float 11s ease-in-out infinite; }
+.art-drift-b { animation: art-float 13s ease-in-out infinite reverse; }
+@keyframes art-float { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(10px, -18px) rotate(3deg); } }
 
 .gradient-text-animated {
   background: linear-gradient(100deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
@@ -142,7 +183,7 @@ body { background: var(--bg); color: var(--text); -webkit-font-smoothing: antial
 .glow-border { position: relative; }
 .glow-border::after {
   content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
-  background: conic-gradient(from var(--angle), transparent 0 60%, var(--accent) 75%, var(--accent-2) 85%, transparent 95%);
+  background: conic-gradient(from var(--angle), transparent 0 62%, var(--accent) 80%, transparent 96%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
   animation: spin-angle 5s linear infinite;
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroArt } from "@/components/home/HeroArt";
 import { HeroStage } from "@/components/home/HeroStage";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { InstallSwitcher } from "@/components/home/InstallSwitcher";
@@ -72,75 +73,88 @@ export default function Home() {
     <>
       {/* ───────── hero ───────── */}
       <section className="relative overflow-hidden">
-        <div className="aurora" aria-hidden><span /><span /><span /></div>
-        <div className="grid-bg pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_25%,transparent_70%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24">
-          <Reveal>
-            <Link href="/docs/changelog/" className="group inline-flex items-center gap-2 rounded-full border border-line bg-panel/70 py-1 pl-1 pr-3 text-xs text-muted backdrop-blur hover:text-text">
-              <span className="rounded-full bg-hi px-2 py-0.5 font-semibold text-[#111]">New</span>
-              In-app screen recorder & launch videos with sound
-              <Icon name="arrow" className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mx-auto mt-6 max-w-5xl text-[2.2rem] font-extrabold leading-[1.04] tracking-[-0.035em] sm:text-7xl lg:text-[5.5rem]">
-              Let your AI agent<br />
-              <RotatingWord words={["test", "drive", "debug", "film"]} /> your Expo app.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl">
-              Claude Code, Antigravity and Cursor see, tap, type and debug your app <strong className="highlight font-semibold text-text">live on a real phone</strong> — then shoot a polished launch video of it. Free and open source.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Link href="/docs/bridge/" className="shine group inline-flex items-center gap-2 rounded-xl bg-text px-6 py-3.5 font-semibold text-bg shadow-xl shadow-black/10 transition-transform hover:-translate-y-0.5">
+        <div className="grid-bg pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_top_right,black_20%,transparent_65%)]" />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] items-center gap-6 px-4 pt-10 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:pt-16">
+          <div className="order-2 lg:order-1">
+            <Reveal>
+              <Link href="/docs/changelog/" className="group inline-flex items-center gap-2 border border-line bg-panel/70 py-1 pl-1 pr-3 font-mono text-[11px] uppercase tracking-wider text-muted backdrop-blur hover:text-text">
+                <span className="bg-hi px-2 py-0.5 font-bold text-[#111]">New</span>
+                Screen recorder + launch videos
+                <Icon name="arrow" className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.02] tracking-[-0.04em] sm:text-7xl lg:text-[5.4rem]">
+                Let your AI agent <RotatingWord words={["test", "drive", "debug", "film"]} /><br />
+                your Expo app.
+              </h1>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-6 max-w-xl text-lg text-muted sm:text-xl">
+                Claude Code, Antigravity and Cursor see, tap, type and debug your app <strong className="highlight font-semibold text-text">live on a real phone</strong> — then shoot a polished launch video of it.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1} className="order-1 mx-auto w-[78%] max-w-[560px] lg:order-2 lg:w-full"><HeroArt /></Reveal>
+        </div>
+
+        {/* install + CTA row, motion.dev style */}
+        <div className="relative mx-auto mt-10 grid max-w-7xl items-end gap-6 px-4 pb-16 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <Reveal delay={0.15}><InstallSwitcher /></Reveal>
+          <Reveal delay={0.2}>
+            <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-muted lg:text-right">Free and open source · MIT · v{site.versions.bridge} / v{site.versions.video}</p>
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <Link href="/docs/bridge/" className="shine group inline-flex items-center gap-2 bg-accent px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-wider text-on-accent transition-transform hover:-translate-y-0.5">
                 Get started <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/docs/video/" className="inline-flex items-center gap-2 rounded-xl border border-line bg-panel/80 px-6 py-3.5 font-semibold backdrop-blur transition-colors hover:border-accent">
-                <Icon name="film" className="size-4 text-accent-2-ink" /> Make a launch video
+              <Link href="/docs/video/" className="inline-flex items-center gap-2 border border-text/80 px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-wider transition-colors hover:bg-text hover:text-bg">
+                Launch video ›
               </Link>
-              <a href={site.repos.bridge} className="inline-flex items-center gap-2 rounded-xl border border-line bg-panel/80 px-6 py-3.5 font-semibold backdrop-blur transition-colors hover:border-accent">
-                <Icon name="star" className="size-4 text-[#f5b301]" /> Star on GitHub
-              </a>
             </div>
           </Reveal>
-          <Reveal delay={0.2} className="mt-10">
-            <InstallSwitcher />
-            <p className="mt-3 text-xs text-muted">
-              expo-mcp-bridge {site.versions.bridge} · expo-launch-video {site.versions.video} · <Link href="/docs/ai-setup/" className="underline underline-offset-2 hover:text-text">or let your AI install it</Link>
-            </p>
-          </Reveal>
-          <HeroStage />
         </div>
       </section>
 
-      {/* ───────── works with ───────── */}
-      <section aria-label="Works with" className="border-y border-line bg-bg-2/60 py-6">
-        <div className="marquee overflow-hidden">
-          <div className="marquee-track gap-3">
+      {/* ───────── works with: tilted tape ───────── */}
+      <section aria-label="Works with" className="relative z-10 -my-4 overflow-x-clip py-8">
+        <div className="marquee -mx-4 -rotate-2 overflow-hidden border-y-2 border-[#0b0b0b] bg-[var(--shape-2)] py-3.5 text-[#0b0b0b] shadow-xl">
+          <div className="marquee-track">
             {[...worksWith, ...worksWith].map((w, i) => (
-              <span key={i} aria-hidden={i >= worksWith.length} className="mx-1.5 whitespace-nowrap rounded-full border border-line bg-panel px-4 py-2 text-sm font-medium text-muted">{w}</span>
+              <span key={i} aria-hidden={i >= worksWith.length} className="flex items-center whitespace-nowrap px-5 font-mono text-sm font-bold uppercase tracking-wider">
+                {w}<span className="ml-10 text-lg" aria-hidden>✦</span>
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───────── stats ───────── */}
-      <section className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden px-4 py-20 sm:px-6 lg:grid-cols-4" aria-label="At a glance">
-        {stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 0.06} className="px-4 py-2 text-center">
-            <div className="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl"><CountUp to={s.to} suffix={s.suffix} /></div>
-            <div className="mt-2 text-sm text-muted">{s.label}</div>
+      {/* ───────── live demo ───────── */}
+      <section className="border-b border-line bg-bg-2 pb-24 pt-20" aria-labelledby="demo-h">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <Reveal className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-6">
+            <h2 id="demo-h" className="text-4xl font-extrabold tracking-tight sm:text-5xl">Watch it work.</h2>
+            <p className="max-w-md text-muted">An agent tests a login form on a real phone — snapshot, type, tap, read the diff.</p>
           </Reveal>
-        ))}
+          <HeroStage />
+        </div>
+      </section>
+
+      {/* ───────── stats: solid color block ───────── */}
+      <section className="bg-[var(--shape-1)] text-[var(--on-shape-1)]" aria-label="At a glance">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 px-4 sm:px-6 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.06} className={`px-4 py-14 ${i > 0 ? "lg:border-l" : ""} ${i % 2 ? "border-l" : ""} border-black/15`}>
+              <div className="text-6xl font-extrabold tracking-[-0.04em] sm:text-7xl"><CountUp to={s.to} suffix={s.suffix} /></div>
+              <div className="mt-2 font-mono text-xs font-bold uppercase tracking-wider opacity-80">{s.label}</div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* ───────── two libraries ───────── */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6" aria-labelledby="kit-h">
+      <section className="mx-auto max-w-7xl px-4 pt-28 sm:px-6" aria-labelledby="kit-h">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-ink">The kit</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">The kit</p>
           <h2 id="kit-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Two libraries. One superpower.</h2>
         </Reveal>
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -158,8 +172,8 @@ export default function Home() {
                 <h3 className="mt-1 font-mono text-2xl font-bold tracking-tight sm:text-3xl">{lib.name}</h3>
                 <p className="mt-3 text-muted">{lib.body}</p>
                 <div className="mt-6 rounded-xl border border-line bg-code px-4 py-3 font-mono text-sm">{lib.code}</div>
-                <Link href={lib.href} className="mt-6 inline-flex items-center gap-1.5 font-semibold hover:gap-2.5 transition-all">
-                  Read the docs <Icon name="arrow" className="size-4" />
+                <Link href={lib.href} className="mt-6 inline-flex items-center gap-1.5 font-mono text-sm font-bold uppercase tracking-wider transition-colors hover:text-accent-ink">
+                  Read the docs ›
                 </Link>
               </SpotlightCard>
             </Reveal>
@@ -168,9 +182,9 @@ export default function Home() {
       </section>
 
       {/* ───────── just ask (code showcase) ───────── */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]" aria-labelledby="ask-h">
+      <section className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]" aria-labelledby="ask-h">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-ink">Just ask</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">Just ask</p>
           <h2 id="ask-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">No more pasting screenshots into the chat.</h2>
           <p className="mt-5 text-lg text-muted">Your agent snapshots the visible screen, acts by reference, and reads back only what changed — new text, errors and failed requests included. It checks its own work.</p>
           <ul className="mt-7 space-y-3">
@@ -198,14 +212,14 @@ export default function Home() {
       {/* ───────── bridge features ───────── */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6" aria-labelledby="bridge-h">
         <Reveal className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-ink">expo-mcp-bridge</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">expo-mcp-bridge</p>
           <h2 id="bridge-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Built for agents. Kind to your token budget.</h2>
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {bridgeFeatures.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.05}>
               <SpotlightCard className="group h-full rounded-2xl border border-line bg-panel p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-accent/50">
-                <span className="grid size-11 place-items-center rounded-xl bg-gradient-to-br from-accent/15 to-accent-2/15 text-accent-ink transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]">
+                <span className="grid size-11 place-items-center rounded-xl bg-accent/12 text-accent-ink transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]">
                   <Icon name={f.icon} />
                 </span>
                 <h3 className="mt-5 text-lg font-bold">{f.title}</h3>
@@ -219,11 +233,11 @@ export default function Home() {
       {/* ───────── how it works ───────── */}
       <section className="mx-auto max-w-7xl px-4 py-28 sm:px-6" aria-labelledby="hiw-h">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-ink">How it works</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">How it works</p>
           <h2 id="hiw-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Up and running in two minutes.</h2>
         </Reveal>
         <div className="relative mt-14 grid gap-6 md:grid-cols-3">
-          <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-accent via-accent-2 to-accent-3 opacity-40 md:block" aria-hidden />
+          <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-accent opacity-40 md:block" aria-hidden />
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.1} className="relative text-center">
               <div className="mx-auto grid size-14 place-items-center rounded-2xl border border-line bg-panel font-mono text-lg font-bold shadow-lg shadow-black/5"><span className="gradient-text">{s.n}</span></div>
@@ -239,7 +253,7 @@ export default function Home() {
       <section className="relative overflow-hidden border-y border-line bg-bg-2/60 py-28" aria-labelledby="video-h">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-2-ink">expo-launch-video</p>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-2-ink">expo-launch-video</p>
             <h2 id="video-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Ask for a launch video. <span className="gradient-text">Get a launch video.</span></h2>
             <p className="mt-5 text-lg text-muted">Your agent records the real app on your phone, picks the best takes, writes the copy and cuts it — intro, pop-outs, side-by-side panels, outro.</p>
           </Reveal>
@@ -259,9 +273,9 @@ export default function Home() {
       </section>
 
       {/* ───────── studio ───────── */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]" aria-labelledby="studio-h">
+      <section className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] overflow-x-clip items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]" aria-labelledby="studio-h">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-2-ink">The studio</p>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-2-ink">The studio</p>
           <h2 id="studio-h" className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Edit by typing what you want.</h2>
           <p className="mt-5 text-lg text-muted">A browser editor with live preview, a timeline and a scene inspector. Simple edits apply instantly; anything else goes to your agent, which edits the video live.</p>
           <div className="mt-7 flex flex-wrap gap-2">
@@ -269,11 +283,11 @@ export default function Home() {
               <span key={p} className="rounded-full border border-line bg-panel px-3.5 py-1.5 font-mono text-xs text-muted">“{p}”</span>
             ))}
           </div>
-          <Link href="/docs/video/studio/" className="mt-8 inline-flex items-center gap-1.5 font-semibold text-accent-2-ink transition-all hover:gap-2.5">Tour the studio <Icon name="arrow" className="size-4" /></Link>
+          <Link href="/docs/video/studio/" className="mt-8 inline-flex items-center gap-1.5 font-semibold text-accent-2-ink transition-all hover:gap-2.5">Tour the studio ›</Link>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="group relative [perspective:1600px]">
-            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-accent/25 via-accent-2/20 to-accent-3/20 blur-2xl" aria-hidden />
+            <div className="absolute -inset-6 rounded-[2rem] bg-accent/20 blur-2xl" aria-hidden />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={asset("/images/studio.svg")} alt="The launch video studio: scene list, live preview with a popped-out card, scene inspector, timeline with sound markers, and a prompt box reading “make the intro feel more premium”." loading="lazy"
               className="relative w-full rounded-2xl border border-line shadow-2xl shadow-black/30 transition-transform duration-700 [transform:rotateY(-8deg)_rotateX(4deg)] group-hover:[transform:rotateY(0)_rotateX(0)]" />
@@ -299,7 +313,12 @@ export default function Home() {
       {/* ───────── cta ───────── */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] bg-[#0b0b12] px-6 py-16 text-center text-white sm:px-12 sm:py-20">
-          <div className="aurora !inset-0 !h-full !opacity-60" aria-hidden><span /><span /><span /></div>
+          <svg className="pointer-events-none absolute inset-0 size-full" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid slice" aria-hidden>
+            <path fill="var(--shape-1)" d="M-60 -40C80-60 230 10 240 120S130 300 10 300-120 200-60-40z" />
+            <path fill="var(--shape-2)" d="M1060 560C920 600 760 540 760 430s120-170 230-170 140 120 70 300z" />
+            <circle cx="880" cy="90" r="22" fill="var(--shape-1)" />
+            <circle cx="140" cy="440" r="12" fill="var(--shape-2)" />
+          </svg>
           <div className="relative">
             <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Free. Open source.<br />Yours to ship.</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-white/70">Both libraries are MIT-licensed. Star them on GitHub, file issues, send PRs.</p>

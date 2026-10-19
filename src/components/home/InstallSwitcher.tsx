@@ -16,12 +16,12 @@ export function InstallSwitcher() {
   const [active, setActive] = useState(managers[0]);
   return (
     <div className="glow-border mx-auto w-full max-w-2xl rounded-2xl border border-line bg-panel/80 text-left shadow-xl shadow-black/5 backdrop-blur">
-      <div role="tablist" aria-label="Package manager" className="flex gap-1 overflow-x-auto border-b border-line px-2 pt-2">
+      <div role="tablist" aria-label="Package manager" className="flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-2 pt-2 [scrollbar-width:none]">
         {managers.map((m) => (
           <button key={m.id} role="tab" aria-selected={m.id === active.id} onClick={() => setActive(m)}
             className={`relative rounded-t-lg px-3.5 py-2 text-sm font-medium transition-colors ${m.id === active.id ? "text-text" : "text-muted hover:text-text"}`}>
             {m.label}
-            {m.id === active.id && <motion.span layoutId="pm-underline" className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-accent" />}
+            {m.id === active.id && <motion.span layoutId="pm-underline" className="absolute inset-x-2 bottom-0 h-0.5 rounded-full bg-accent" />}
           </button>
         ))}
       </div>

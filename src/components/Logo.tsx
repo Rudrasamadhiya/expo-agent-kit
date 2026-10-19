@@ -1,17 +1,11 @@
+/** Phone with a terminal prompt, and an AI sparkle breaking out of its corner. Colors follow the theme. */
 export function Logo({ size = 28 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
-      <defs>
-        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="var(--accent)" />
-          <stop offset="0.6" stopColor="var(--accent-2)" />
-          <stop offset="1" stopColor="var(--accent-3)" />
-        </linearGradient>
-      </defs>
-      <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#lg)" />
-      <rect x="10.5" y="7" width="11" height="18" rx="2.6" fill="none" stroke="#fff" strokeWidth="2" />
-      <circle cx="16" cy="21.6" r="1.1" fill="#fff" />
-      <path d="M13 12.5h6M13 15.5h4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M16 1.2c11.2 0 14.8 3.6 14.8 14.8S27.2 30.8 16 30.8 1.2 27.2 1.2 16 4.8 1.2 16 1.2z" fill="var(--logo-bg)" />
+      <rect x="8.2" y="7" width="12.6" height="19.4" rx="3.2" fill="#fff" stroke="var(--logo-ink)" strokeWidth="1.3" />
+      <path d="M11.4 13.6l2.6 2.4-2.6 2.4M15.6 19.6h3" fill="none" stroke="var(--logo-bg)" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M24.2 2.6Q24.2 8.6 30.2 8.6Q24.2 8.6 24.2 14.6Q24.2 8.6 18.2 8.6Q24.2 8.6 24.2 2.6z" fill="var(--logo-spark)" stroke="var(--logo-ink)" strokeWidth="1.3" strokeLinejoin="round" />
     </svg>
   );
 }

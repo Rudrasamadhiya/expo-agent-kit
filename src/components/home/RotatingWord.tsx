@@ -13,7 +13,7 @@ export function RotatingWord({ words, interval = 2200 }: { words: string[]; inte
   }, [reduce, words.length, interval]);
 
   return (
-    <span className="relative inline-grid justify-items-end align-bottom">
+    <span className="relative inline-grid justify-items-start align-bottom">
       {/* reserve the widest word so the line never reflows */}
       {words.map((w) => (
         <span key={w} className="invisible col-start-1 row-start-1" aria-hidden>{w}</span>

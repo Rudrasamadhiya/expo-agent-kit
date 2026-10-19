@@ -65,7 +65,7 @@ export function AgentDemo() {
       {/* phone */}
       <div className="mx-auto w-[220px] rounded-[2.2rem] border-[7px] border-[#0a0a10] bg-white p-4 pt-8 text-[#15151f] shadow-2xl shadow-black/30 dark:border-[#26263a]">
         <div className="mx-auto mb-6 h-1.5 w-16 rounded-full bg-[#e8e8f0]" />
-        <div className="mx-auto mb-3 grid size-10 place-items-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white">A</div>
+        <div className="mx-auto mb-3 grid size-10 place-items-center rounded-xl bg-accent text-sm font-bold text-on-accent">A</div>
         <p className="text-center text-[15px] font-extrabold">Welcome back</p>
         <p className="mb-4 text-center text-[10px] text-[#6b6b80]">Log in to continue</p>
         <Field label="Email" value={phone.email} active={phone.focus === "email"} />
