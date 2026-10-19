@@ -12,8 +12,20 @@ const paths = {
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   check: <path d="m5 12 4 4L19 7" />,
   star: <path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" />,
+  chevron: <path d="m9 6 6 6-6 6" />,
+  chevronDown: <path d="m6 9 6 6 6-6" />,
+  plus: <path d="M12 5v14M5 12h14" />,
   terminal: <><rect x="3" y="4" width="18" height="16" rx="2" /><path d="m7 9 3 3-3 3M13 15h4" /></>,
 };
+
+/** The brand sparkle (same shape as the logo's), filled. */
+export function Sparkle({ className = "size-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+      <path d="M12 1.5Q12 12 22.5 12Q12 12 12 22.5Q12 12 1.5 12Q12 12 12 1.5z" fill="currentColor" />
+    </svg>
+  );
+}
 
 export type IconName = keyof typeof paths;
 

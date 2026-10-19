@@ -6,7 +6,7 @@ const chips = [
   { text: "app_tap → 84 ms", className: "left-[-2%] top-[14%] float-slow", dot: "bg-[#28c840]" },
   { text: "+ 1 new error caught", className: "right-[-3%] top-[6%] float-slower", dot: "bg-[#ff5f57]" },
   { text: "snapshot · 312 tokens", className: "left-[6%] bottom-[-5%] float-slower", dot: "bg-accent" },
-  { text: "🎬 launch video ready", className: "right-[2%] bottom-[-4%] float-slow", dot: "bg-accent-2" },
+  { text: "launch video ready", className: "right-[2%] bottom-[-4%] float-slow", dot: "bg-accent-2" },
 ];
 
 /** The live agent demo on a softly tilting 3D stage with floating status chips. */

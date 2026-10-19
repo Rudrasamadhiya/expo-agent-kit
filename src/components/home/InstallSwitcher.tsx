@@ -15,7 +15,7 @@ const managers = [
 export function InstallSwitcher() {
   const [active, setActive] = useState(managers[0]);
   return (
-    <div className="glow-border mx-auto w-full max-w-2xl rounded-2xl border border-line bg-panel/80 text-left shadow-xl shadow-black/5 backdrop-blur">
+    <div className="w-full max-w-2xl border border-line bg-panel text-left">
       <div role="tablist" aria-label="Package manager" className="flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-2 pt-2 [scrollbar-width:none]">
         {managers.map((m) => (
           <button key={m.id} role="tab" aria-selected={m.id === active.id} onClick={() => setActive(m)}

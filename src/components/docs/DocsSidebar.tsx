@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { docsNav } from "@/content/site";
+import { Icon } from "@/components/home/Icons";
 
 export function DocsSidebar() {
   const pathname = usePathname();
@@ -35,7 +36,7 @@ export function DocsSidebar() {
       <div className="mb-6 lg:hidden">
         <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}
           className="flex w-full items-center justify-between rounded-xl border border-line bg-panel px-4 py-2.5 text-sm">
-          <span>{current?.title || "Documentation"}</span><span aria-hidden>{open ? "▴" : "▾"}</span>
+          <span>{current?.title || "Documentation"}</span><Icon name="chevronDown" className={`size-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
         </button>
         {open && <div className="mt-2 rounded-xl border border-line bg-panel p-3">{nav}</div>}
       </div>

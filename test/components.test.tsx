@@ -15,7 +15,7 @@ describe("CopyButton", () => {
     render(<CopyButton text="npx expo install expo-mcp-bridge" />);
     await user.click(screen.getByRole("button", { name: "Copy to clipboard" }));
     expect(writeText).toHaveBeenCalledWith("npx expo install expo-mcp-bridge");
-    expect(await screen.findByRole("button", { name: "Copied" })).toHaveTextContent("Copied ✓");
+    expect(await screen.findByRole("button", { name: "Copied" })).toHaveTextContent("Copied");
   });
 });
 

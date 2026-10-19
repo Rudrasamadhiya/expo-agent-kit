@@ -20,7 +20,8 @@ export default function Page() {
           <tr><td>Anthropic TypeScript SDK</td><td>Optional studio edits</td><td>MIT</td></tr>
           <tr><td>react-native-view-shot (peer)</td><td>Screenshots and recordings</td><td>MIT</td></tr>
           <tr><td>Next.js, React, Tailwind CSS, Motion, Shiki</td><td>This website</td><td>MIT</td></tr>
-          <tr><td>Inter, JetBrains Mono</td><td>Website fonts</td><td>SIL Open Font License 1.1</td></tr>
+          <tr><td>React Bits (VariableProximity, ScrollVelocity)</td><td>Hero headline and scroll band animations</td><td>MIT + Commons Clause</td></tr>
+          <tr><td>Mona Sans, JetBrains Mono</td><td>Website fonts</td><td>SIL Open Font License 1.1</td></tr>
         </tbody>
       </table>
       <h2>Trademarks</h2>

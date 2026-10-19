@@ -12,10 +12,10 @@
   --muted: #3e2f57;
   --accent: #e34234;
   --accent-2: #d4ff3f;
-  --accent-3: #7b4fd6;
+  --accent-3: #5a2fa6;
   --accent-ink: #8e1c10;
   --accent-2-ink: #2c4500;
-  --on-accent: #ffffff;
+  --on-accent: #140c22;
   --code-bg: #dccdf0;
   --grad-1: #e34234;
   --grad-2: #ff6a4d;
@@ -80,10 +80,10 @@
   --line: #e4dcc6;
   --text: #1d1b14;
   --muted: #6a6352;
-  --accent: #0b8a5c;
+  --accent: #08744c;
   --accent-2: #e34234;
   --accent-3: #0e6b72;
-  --accent-ink: #0a7a51;
+  --accent-ink: #08744c;
   --accent-2-ink: #b02a14;
   --on-accent: #ffffff;
   --code-bg: #f6f1e3;
@@ -102,7 +102,7 @@
   --shape-3-light: #6fdcae;
   --shape-3-dark: #06573a;
   --shape-line: #1d1b14;
-  --logo-bg: #0b8a5c;
+  --logo-bg: #08744c;
   --logo-spark: #e34234;
   --logo-ink: #1d1b14;
   --on-shape-1: #ffffff;
@@ -123,21 +123,20 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-2-ink: var(--accent-2-ink);
   --color-on-accent: var(--on-accent);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-mona), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono-face), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body { background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
-::selection { background: var(--glow); }
+::selection { background: var(--accent); color: var(--on-accent); }
+html { caret-color: var(--accent); scrollbar-color: color-mix(in srgb, var(--text) 28%, transparent) transparent; accent-color: var(--accent); }
+.tabular { font-variant-numeric: tabular-nums; }
+/* Expanded display voice: Mona Sans at width 112, tracking scaled to size. */
+.display { font-stretch: 112%; font-weight: 640; letter-spacing: -0.04em; line-height: 0.98; text-wrap: balance; }
+h2.display { line-height: 1.02; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 
-.gradient-text {
-  background: linear-gradient(100deg, var(--grad-1) 0%, var(--grad-2) 55%, var(--grad-3) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 .grid-bg {
   background-image: radial-gradient(var(--line) 1px, transparent 1px);
   background-size: 28px 28px;
@@ -155,51 +154,14 @@ body { background: var(--bg); color: var(--text); -webkit-font-smoothing: antial
 .art-drift-b { animation: art-float 13s ease-in-out infinite reverse; }
 @keyframes art-float { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(10px, -18px) rotate(3deg); } }
 
-.gradient-text-animated {
-  background: linear-gradient(100deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
-  background-size: 300% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: hue-slide 8s linear infinite;
-}
-@keyframes hue-slide { to { background-position: 300% 0; } }
-
-.highlight { background: linear-gradient(transparent 58%, color-mix(in srgb, var(--hi) 55%, transparent) 58%); padding: 0 0.1em; }
-
 .marquee { mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); }
 .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-/* Mouse-follow highlight; --x/--y are set by SpotlightCard */
-.spotlight { position: relative; isolation: isolate; }
-.spotlight::before {
-  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity 0.3s;
-  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), var(--glow), transparent 45%);
-}
-.spotlight:hover::before { opacity: 1; }
-
-/* Rotating conic border */
-@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-.glow-border { position: relative; }
-.glow-border::after {
-  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
-  background: conic-gradient(from var(--angle), transparent 0 62%, var(--accent) 80%, transparent 96%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
-  animation: spin-angle 5s linear infinite;
-}
-@keyframes spin-angle { to { --angle: 360deg; } }
-
 .float-slow { animation: float 6s ease-in-out infinite; }
 .float-slower { animation: float 8s ease-in-out infinite; animation-delay: -3s; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-.shine { position: relative; overflow: hidden; }
-.shine::after {
-  content: ""; position: absolute; inset: 0; transform: translateX(-120%);
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
-  transition: transform 0.7s ease;
-}
-.shine:hover::after { transform: translateX(120%); }
 
 .kenburns { animation: kenburns 7s ease-out both; }
 @keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }

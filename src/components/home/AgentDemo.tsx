@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Icon } from "./Icons";
 
 type Line = { kind: "user" | "tool" | "out" | "agent"; text: string };
 type Phone = { email: string; password: string; focus: "email" | "password" | "login" | null; error: boolean };
@@ -14,7 +15,7 @@ const script: { line?: Line; phone?: Partial<Phone>; wait: number }[] = [
   { phone: { email: "sam@demo.dev" }, wait: 700 },
   { line: { kind: "tool", text: 'app_tap {ref:"e7"}' }, phone: { focus: "login" }, wait: 650 },
   { phone: { error: true, focus: null }, line: { kind: "out", text: '+ text "Please enter your password."' }, wait: 1200 },
-  { line: { kind: "agent", text: "Login blocks an empty password with a clear message ✓ — no network call was made." }, wait: 3200 },
+  { line: { kind: "agent", text: "Login blocks an empty password with a clear message — no network call was made." }, wait: 3200 },
 ];
 
 const empty: Phone = { email: "", password: "", focus: null, error: false };
@@ -52,7 +53,7 @@ export function AgentDemo() {
             {lines.map((l, i) => (
               <motion.div key={i + l.text} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                 {l.kind === "user" && <div><span className="text-accent-2-ink">you ›</span> {l.text}</div>}
-                {l.kind === "tool" && <div className="text-accent-ink">⚙ {l.text}</div>}
+                {l.kind === "tool" && <div className="flex items-start gap-1.5 text-accent-ink"><Icon name="sliders" className="mt-0.5 size-3.5 shrink-0" />{l.text}</div>}
                 {l.kind === "out" && <pre className="whitespace-pre-wrap rounded-lg bg-bg-2 px-3 py-2 text-muted">{l.text}</pre>}
                 {l.kind === "agent" && <div className="rounded-lg border border-accent/40 bg-accent/10 px-3 py-2 font-sans text-[13.5px]">{l.text}</div>}
               </motion.div>

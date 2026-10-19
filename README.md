@@ -36,7 +36,7 @@ The website and documentation for two open-source MCP libraries for Expo and Rea
 - **One-shot AI setup** page — paste one line into your agent and it installs everything.
 - Three themes — Lavender, Midnight and Ivory — keyboard-accessible, respects reduced motion, works at phone width.
 
-Built with Next.js (static export), React, Tailwind CSS, Motion and Shiki. No analytics, no cookies.
+Built with Next.js (static export), React, Tailwind CSS, Motion, Shiki and two [React Bits](https://reactbits.dev) components, set in Mona Sans. No analytics, no cookies.
 
 ## Develop
 
