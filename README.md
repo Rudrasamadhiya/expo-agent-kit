@@ -1,23 +1,40 @@
-# Expo Agent Kit — website
+<p align="center">
+  <a href="https://rudrasamadhiya.github.io/expo-agent-kit/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
+      <img alt="Expo Agent Kit — website and docs for expo-mcp-bridge and expo-launch-video" src=".github/assets/banner-light.svg" width="100%">
+    </picture>
+  </a>
+</p>
 
-The website and documentation for two open-source MCP libraries for Expo & React Native:
+<p align="center">
+  <a href="https://github.com/Rudrasamadhiya/expo-agent-kit/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/Rudrasamadhiya/expo-agent-kit/deploy.yml?branch=main&style=flat-square&labelColor=0b0b0b&label=deploy"></a>
+  <a href="https://www.npmjs.com/package/expo-mcp-bridge"><img alt="expo-mcp-bridge" src="https://img.shields.io/npm/v/expo-mcp-bridge?style=flat-square&labelColor=0b0b0b&color=ff2da8&label=expo-mcp-bridge"></a>
+  <a href="https://www.npmjs.com/package/expo-launch-video"><img alt="expo-launch-video" src="https://img.shields.io/npm/v/expo-launch-video?style=flat-square&labelColor=0b0b0b&color=d4ff3f&label=expo-launch-video"></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-e34234?style=flat-square&labelColor=0b0b0b"></a>
+</p>
+
+<p align="center">
+  <a href="https://rudrasamadhiya.github.io/expo-agent-kit/"><b>Live site</b></a> ·
+  <a href="https://github.com/Rudrasamadhiya/expo-mcp-bridge"><b>expo-mcp-bridge</b></a> ·
+  <a href="https://github.com/Rudrasamadhiya/expo-launch-video"><b>expo-launch-video</b></a>
+</p>
+
+---
+
+The website and documentation for two open-source MCP libraries for Expo and React Native:
 
 | Package | What it does |
 | --- | --- |
 | [`expo-mcp-bridge`](https://github.com/Rudrasamadhiya/expo-mcp-bridge) | Lets AI agents (Claude Code, Antigravity, Cursor, any MCP client) see, tap, type, scroll, screenshot and debug your Expo app on a real phone. |
 | [`expo-launch-video`](https://github.com/Rudrasamadhiya/expo-launch-video) | Lets the agent shoot your app live and cut a polished launch video — motion graphics, pop-outs, sound — in a promptable studio, exported as MP4. |
 
-**Live site:** https://rudrasamadhiya.github.io/expo-agent-kit/
-
-[![CI](https://github.com/Rudrasamadhiya/expo-agent-kit/actions/workflows/deploy.yml/badge.svg)](https://github.com/Rudrasamadhiya/expo-agent-kit/actions/workflows/deploy.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
 ## What's inside
 
-- **Landing page** with an animated agent ⇄ phone demo, a launch-video showcase and a how-it-works diagram.
+- **Landing page** with a live agent ⇄ phone demo, launch-video storyboard, studio tour and how-it-works diagram.
 - **Docs** for both libraries: installation, connecting your agent, every MCP tool with its parameters, the `<AgentBridge />` API, CLI and environment variables, the studio, and troubleshooting.
 - **One-shot AI setup** page — paste one line into your agent and it installs everything.
-- Light and dark themes, keyboard-accessible, respects reduced motion, works at phone width.
+- Three themes — Lavender, Midnight and Ivory — keyboard-accessible, respects reduced motion, works at phone width.
 
 Built with Next.js (static export), React, Tailwind CSS, Motion and Shiki. No analytics, no cookies.
 
