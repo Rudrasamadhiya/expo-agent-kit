@@ -51,8 +51,8 @@ export function AgentDemo() {
           <AnimatePresence initial={false}>
             {lines.map((l, i) => (
               <motion.div key={i + l.text} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                {l.kind === "user" && <div><span className="text-accent-2">you ›</span> {l.text}</div>}
-                {l.kind === "tool" && <div className="text-accent">⚙ {l.text}</div>}
+                {l.kind === "user" && <div><span className="text-accent-2-ink">you ›</span> {l.text}</div>}
+                {l.kind === "tool" && <div className="text-accent-ink">⚙ {l.text}</div>}
                 {l.kind === "out" && <pre className="whitespace-pre-wrap rounded-lg bg-bg-2 px-3 py-2 text-muted">{l.text}</pre>}
                 {l.kind === "agent" && <div className="rounded-lg border border-accent/40 bg-accent/10 px-3 py-2 font-sans text-[13.5px]">{l.text}</div>}
               </motion.div>
@@ -65,7 +65,7 @@ export function AgentDemo() {
       {/* phone */}
       <div className="mx-auto w-[220px] rounded-[2.2rem] border-[7px] border-[#0a0a10] bg-white p-4 pt-8 text-[#15151f] shadow-2xl shadow-black/30 dark:border-[#26263a]">
         <div className="mx-auto mb-6 h-1.5 w-16 rounded-full bg-[#e8e8f0]" />
-        <div className="mx-auto mb-3 grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#6d5cff] to-[#e0479e] text-sm font-bold text-white">A</div>
+        <div className="mx-auto mb-3 grid size-10 place-items-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white">A</div>
         <p className="text-center text-[15px] font-extrabold">Welcome back</p>
         <p className="mb-4 text-center text-[10px] text-[#6b6b80]">Log in to continue</p>
         <Field label="Email" value={phone.email} active={phone.focus === "email"} />
@@ -78,12 +78,12 @@ export function AgentDemo() {
           )}
         </AnimatePresence>
         <div className="relative">
-          <div className="rounded-lg bg-[#5b4ce6] py-2 text-center text-[12px] font-bold text-white">Log In</div>
+          <div className="rounded-lg bg-accent py-2 text-center text-[12px] font-bold text-on-accent">Log In</div>
           {phone.focus === "login" && (
-            <motion.span className="absolute inset-0 rounded-lg border-2 border-[#e0479e]" initial={{ scale: 1, opacity: 1 }} animate={{ scale: 1.25, opacity: 0 }} transition={{ duration: 0.6, repeat: 1 }} />
+            <motion.span className="absolute inset-0 rounded-lg border-2 border-accent-2" initial={{ scale: 1, opacity: 1 }} animate={{ scale: 1.25, opacity: 0 }} transition={{ duration: 0.6, repeat: 1 }} />
           )}
         </div>
-        <p className="mt-4 text-center text-[9px] text-[#6b6b80]">Don&apos;t have an account? <span className="font-semibold text-[#5b4ce6]">Register</span></p>
+        <p className="mt-4 text-center text-[9px] text-[#6b6b80]">Don&apos;t have an account? <span className="font-semibold text-accent-ink">Register</span></p>
       </div>
     </div>
   );
@@ -93,7 +93,7 @@ function Field({ label, value, placeholder = "you@example.com", active }: { labe
   return (
     <div className="mb-2.5">
       <p className="mb-1 text-[9.5px] font-semibold text-[#4b4b60]">{label}</p>
-      <div className={`rounded-md border px-2 py-1.5 text-[11px] transition-colors ${active ? "border-[#6d5cff] ring-2 ring-[#6d5cff]/25" : "border-[#e4e4ef]"} bg-[#f6f6fb]`}>
+      <div className={`rounded-md border px-2 py-1.5 text-[11px] transition-colors ${active ? "border-accent ring-2 ring-accent/25" : "border-[#e4e4ef]"} bg-[#f6f6fb]`}>
         {value || <span className="text-[#a0a0b5]">{placeholder}</span>}
       </div>
     </div>

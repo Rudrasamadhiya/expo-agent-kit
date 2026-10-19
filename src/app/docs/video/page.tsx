@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { VideoShowcase } from "@/components/home/VideoShowcase";
+import { Storyboard } from "@/components/home/Storyboard";
 
 export const metadata: Metadata = { title: "expo-launch-video" };
 
@@ -9,7 +9,7 @@ export default function Page() {
     <>
       <h1>expo-launch-video</h1>
       <p>Your AI agent shoots and edits a launch video of your Expo app — live from your phone. Ask for <em>“a 30 second launch video of my app”</em>: it records the real app (page loads, scrolling, taps, panels opening), picks the best takes, writes the captions, and cuts a polished 1080p MP4 with motion graphics, break-out pop-outs and sound. Then you tweak it in a studio by dragging or typing.</p>
-      <div className="not-prose my-8"><VideoShowcase /></div>
+      <div className="not-prose my-8"><Storyboard /></div>
       <h2>Highlights</h2>
       <ul>
         <li><strong>Real footage</strong> — in-app screen recordings at ~10–15 fps, full-page scroll captures, modals captured as overlays.</li>

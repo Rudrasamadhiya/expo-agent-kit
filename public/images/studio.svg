@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="prev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7ab8"/><stop offset="0.5" stop-color="#b13a8a"/><stop offset="1" stop-color="#3a0f3a"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f80ff"/><stop offset="1" stop-color="#ff6bb5"/></linearGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2bb8"/><stop offset="1" stop-color="#1a1250"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b6d80"/><stop offset="1" stop-color="#3fd6e8"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.4"/></filter>
+  </defs>
+  <rect width="1600" height="1000" rx="22" fill="#0e0e17"/>
+  <!-- title bar -->
+  <rect width="1600" height="56" rx="22" fill="#15151f"/><rect y="34" width="1600" height="22" fill="#15151f"/>
+  <circle cx="34" cy="28" r="8" fill="#ff5f57"/><circle cx="60" cy="28" r="8" fill="#febc2e"/><circle cx="86" cy="28" r="8" fill="#28c840"/>
+  <rect x="560" y="14" width="480" height="28" rx="14" fill="#0e0e17"/>
+  <text x="800" y="33" text-anchor="middle" fill="#8b8ca3" font-size="14">localhost:8790 · Launch Video Studio</text>
+  <rect x="1416" y="12" width="160" height="32" rx="10" fill="url(#acc)"/>
+  <text x="1496" y="33" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Export MP4</text>
+  <!-- scene list -->
+  <rect x="20" y="76" width="250" height="620" rx="16" fill="#15151f"/>
+  <text x="40" y="110" fill="#8b8ca3" font-size="13" font-weight="700" letter-spacing="2">SCENES</text>
+  <g font-size="15" fill="#ececf4">
+    <rect x="36" y="128" width="218" height="64" rx="12" fill="#1d1d2b"/><rect x="48" y="140" width="64" height="40" rx="7" fill="url(#c1)"/><text x="124" y="166">Intro</text>
+    <rect x="36" y="204" width="218" height="64" rx="12" fill="#2a2450" stroke="#8f80ff" stroke-width="2"/><rect x="48" y="216" width="64" height="40" rx="7" fill="url(#prev)"/><text x="124" y="242" font-weight="700">Your week</text>
+    <rect x="36" y="280" width="218" height="64" rx="12" fill="#1d1d2b"/><rect x="48" y="292" width="64" height="40" rx="7" fill="url(#c3)"/><text x="124" y="318">Progress</text>
+    <rect x="36" y="356" width="218" height="64" rx="12" fill="#1d1d2b"/><rect x="48" y="368" width="64" height="40" rx="7" fill="url(#c1)"/><text x="124" y="394">Outro</text>
+  </g>
+  <!-- preview -->
+  <rect x="290" y="76" width="900" height="620" rx="16" fill="#15151f"/>
+  <g transform="translate(320 106)" filter="url(#sh)">
+    <rect width="840" height="472" rx="12" fill="url(#prev)"/>
+    <text x="50" y="170" fill="#fff" fill-opacity="0.7" font-size="14" font-weight="700" letter-spacing="3">YOUR WEEK</text>
+    <text x="50" y="215" fill="#fff" font-size="40" font-weight="800">Everything due,</text>
+    <text x="50" y="258" fill="#fff" font-size="40" font-weight="800">at a glance.</text>
+    <rect x="50" y="278" width="116" height="4" rx="2" fill="#fff"/>
+    <rect x="452" y="58" width="172" height="356" rx="28" fill="#0c0c14"/>
+    <rect x="459" y="65" width="158" height="342" rx="23" fill="#f7f7fc"/>
+    <g fill="#fff" stroke="#e8e8f2"><rect x="470" y="110" width="136" height="38" rx="9"/><rect x="470" y="200" width="136" height="38" rx="9"/><rect x="470" y="245" width="136" height="38" rx="9"/><rect x="470" y="290" width="136" height="38" rx="9"/></g>
+    <g transform="translate(560 150) rotate(-3)">
+      <rect width="232" height="100" rx="15" fill="#fff"/>
+      <rect x="15" y="16" width="33" height="33" rx="9" fill="url(#acc)"/>
+      <rect x="58" y="20" width="110" height="10" rx="5" fill="#15151f"/><rect x="58" y="38" width="80" height="8" rx="4" fill="#c9c9d6"/>
+      <rect x="15" y="66" width="202" height="7" rx="3.5" fill="#eeeef6"/><rect x="15" y="66" width="142" height="7" rx="3.5" fill="url(#acc)"/>
+    </g>
+  </g>
+  <!-- player controls -->
+  <circle cx="345" cy="636" r="20" fill="#2a2450"/><path d="M339 626 l16 10 -16 10z" fill="#fff"/>
+  <rect x="384" y="632" width="700" height="8" rx="4" fill="#262636"/><rect x="384" y="632" width="290" height="8" rx="4" fill="url(#acc)"/>
+  <circle cx="674" cy="636" r="9" fill="#fff"/>
+  <text x="1160" y="641" text-anchor="end" fill="#8b8ca3" font-size="14">0:11 / 0:30</text>
+  <!-- inspector -->
+  <rect x="1210" y="76" width="370" height="620" rx="16" fill="#15151f"/>
+  <text x="1232" y="110" fill="#8b8ca3" font-size="13" font-weight="700" letter-spacing="2">SCENE</text>
+  <g font-size="14" fill="#8b8ca3">
+    <text x="1232" y="146">Caption</text>
+    <rect x="1232" y="156" width="326" height="40" rx="9" fill="#0e0e17" stroke="#262636"/><text x="1246" y="181" fill="#ececf4">Everything due, at a glance.</text>
+    <text x="1232" y="226">Duration</text>
+    <rect x="1232" y="236" width="326" height="8" rx="4" fill="#262636"/><rect x="1232" y="236" width="180" height="8" rx="4" fill="#8f80ff"/><circle cx="1412" cy="240" r="9" fill="#fff"/>
+    <text x="1558" y="226" text-anchor="end" fill="#ececf4">4.5 s</text>
+    <text x="1232" y="280">Effect</text>
+    <rect x="1232" y="290" width="104" height="36" rx="18" fill="#2a2450" stroke="#8f80ff"/><text x="1284" y="313" text-anchor="middle" fill="#fff" font-weight="700">Pop-out</text>
+    <rect x="1344" y="290" width="104" height="36" rx="18" fill="#1d1d2b"/><text x="1396" y="313" text-anchor="middle">Zoom</text>
+    <rect x="1456" y="290" width="102" height="36" rx="18" fill="#1d1d2b"/><text x="1507" y="313" text-anchor="middle">Split</text>
+    <text x="1232" y="362">Sound</text>
+    <g fill="#ff6bb5"><rect x="1232" y="384" width="5" height="16" rx="2"/><rect x="1242" y="376" width="5" height="32" rx="2"/><rect x="1252" y="380" width="5" height="24" rx="2"/><rect x="1262" y="370" width="5" height="44" rx="2"/><rect x="1272" y="382" width="5" height="20" rx="2"/><rect x="1282" y="388" width="5" height="8" rx="2"/></g>
+    <text x="1300" y="397" fill="#ececf4">pop · whoosh · chime</text>
+    <text x="1232" y="450">Format</text>
+    <rect x="1232" y="460" width="104" height="36" rx="10" fill="#2a2450" stroke="#8f80ff"/><text x="1284" y="483" text-anchor="middle" fill="#fff" font-weight="700">16:9</text>
+    <rect x="1344" y="460" width="104" height="36" rx="10" fill="#1d1d2b"/><text x="1396" y="483" text-anchor="middle">9:16</text>
+    <rect x="1456" y="460" width="102" height="36" rx="10" fill="#1d1d2b"/><text x="1507" y="483" text-anchor="middle">1:1</text>
+  </g>
+  <!-- timeline -->
+  <rect x="20" y="716" width="1560" height="150" rx="16" fill="#15151f"/>
+  <g font-size="13" fill="#fff" font-weight="700">
+    <rect x="40" y="740" width="250" height="56" rx="10" fill="url(#c1)"/><text x="56" y="773">Intro</text>
+    <rect x="296" y="740" width="420" height="56" rx="10" fill="url(#prev)" stroke="#fff" stroke-width="2"/><text x="312" y="773">Your week · pop-out</text>
+    <rect x="722" y="740" width="460" height="56" rx="10" fill="url(#c3)"/><text x="738" y="773">Progress · side-by-side</text>
+    <rect x="1188" y="740" width="372" height="56" rx="10" fill="url(#c1)"/><text x="1204" y="773">Outro</text>
+  </g>
+  <g fill="#ff6bb5" opacity="0.8">
+    <rect x="40" y="810" width="1520" height="34" rx="8" fill="#1d1d2b"/>
+    <circle cx="120" cy="827" r="6"/><circle cx="330" cy="827" r="6"/><circle cx="470" cy="827" r="6"/><circle cx="760" cy="827" r="6"/><circle cx="910" cy="827" r="6"/><circle cx="1220" cy="827" r="6"/><circle cx="1400" cy="827" r="6"/>
+  </g>
+  <rect x="600" y="728" width="3" height="128" fill="#ff4d6d"/><path d="M593 722 h17 l-8.5 10z" fill="#ff4d6d"/>
+  <!-- prompt box -->
+  <rect x="20" y="884" width="1560" height="96" rx="16" fill="#15151f" stroke="#8f80ff" stroke-opacity="0.5"/>
+  <text x="48" y="920" fill="#8b8ca3" font-size="13" font-weight="700" letter-spacing="2">PROMPT</text>
+  <text x="48" y="955" fill="#ececf4" font-size="20">make the intro feel more premium and zoom into the Start button</text>
+  <rect x="694" y="937" width="2" height="24" fill="#8f80ff"/>
+  <rect x="1440" y="908" width="116" height="48" rx="12" fill="url(#acc)"/>
+  <text x="1498" y="938" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">Apply ↵</text>
+</svg>

@@ -20,15 +20,17 @@ describe("CopyButton", () => {
 });
 
 describe("ThemeToggle", () => {
-  it("switches theme and remembers the choice", async () => {
+  it("cycles Lavender → Midnight → Ivory and remembers the choice", async () => {
     const user = userEvent.setup();
-    document.documentElement.dataset.theme = "dark";
+    document.documentElement.dataset.theme = "light";
     render(<ThemeToggle />);
-    await user.click(await screen.findByRole("button", { name: "Switch to light theme" }));
-    expect(document.documentElement.dataset.theme).toBe("light");
-    expect(localStorage.getItem("theme")).toBe("light");
-    await user.click(screen.getByRole("button", { name: "Switch to dark theme" }));
+    await user.click(await screen.findByRole("button", { name: "Theme: Lavender. Switch to Midnight" }));
     expect(document.documentElement.dataset.theme).toBe("dark");
+    expect(localStorage.getItem("theme")).toBe("dark");
+    await user.click(screen.getByRole("button", { name: "Theme: Midnight. Switch to Ivory" }));
+    expect(document.documentElement.dataset.theme).toBe("ivory");
+    await user.click(screen.getByRole("button", { name: "Theme: Ivory. Switch to Lavender" }));
+    expect(document.documentElement.dataset.theme).toBe("light");
   });
 });
 

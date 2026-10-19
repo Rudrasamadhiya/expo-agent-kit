@@ -19,7 +19,7 @@ export function DocsSidebar() {
               return (
                 <li key={i.href}>
                   <Link href={i.href} aria-current={active ? "page" : undefined} onClick={() => setOpen(false)}
-                    className={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${active ? "bg-accent/12 font-semibold text-accent" : "text-muted hover:bg-bg-2 hover:text-text"}`}>
+                    className={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${active ? "bg-accent/12 font-semibold text-accent-ink" : "text-muted hover:bg-bg-2 hover:text-text"}`}>
                     {i.title}
                   </Link>
                 </li>

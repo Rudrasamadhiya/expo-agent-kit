@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { site } from "@/content/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
   openGraph: { title: site.name, description: site.description, type: "website", url: site.url },
 };
 
-// Set the theme before paint (no flash). Dark by default; respects a saved choice.
-const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}`;
+// Set the theme before paint (no flash): the saved choice (light = Lavender, dark = Midnight,
+// ivory), otherwise the system preference, otherwise Midnight.
+const themeScript = `try{var t=localStorage.getItem('theme');if(['light','dark','ivory'].indexOf(t)<0)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -27,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen font-sans">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-panel focus:px-3 focus:py-2 focus:rounded-lg">Skip to content</a>
+        <ScrollProgress />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

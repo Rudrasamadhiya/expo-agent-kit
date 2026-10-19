@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#3b2bb8"/><stop offset="0.55" stop-color="#1a1250"/><stop offset="1" stop-color="#090717"/>
+    </radialGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f80ff"/><stop offset="0.6" stop-color="#e0479e"/><stop offset="1" stop-color="#ffb35c"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#fff" fill-opacity="0.08"/></pattern>
+    <filter id="blur"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <circle cx="800" cy="360" r="210" fill="#8f80ff" opacity="0.35" filter="url(#blur)"/>
+  <g fill="none" stroke="#fff">
+    <circle cx="800" cy="350" r="150" stroke-opacity="0.18" stroke-width="2"/>
+    <circle cx="800" cy="350" r="210" stroke-opacity="0.1" stroke-width="2"/>
+    <circle cx="800" cy="350" r="280" stroke-opacity="0.05" stroke-width="2"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="610" cy="250" r="5" opacity="0.8"/><circle cx="1010" cy="230" r="4" opacity="0.6"/>
+    <circle cx="960" cy="480" r="6" opacity="0.7"/><circle cx="640" cy="470" r="3" opacity="0.6"/>
+    <circle cx="1060" cy="360" r="3" opacity="0.5"/><circle cx="550" cy="360" r="4" opacity="0.5"/>
+  </g>
+  <g transform="translate(720 270)">
+    <rect width="160" height="160" rx="44" fill="url(#tile)"/>
+    <circle cx="80" cy="80" r="34" fill="none" stroke="#fff" stroke-width="10"/>
+    <ellipse cx="80" cy="80" rx="62" ry="22" fill="none" stroke="#fff" stroke-width="7" transform="rotate(-24 80 80)" stroke-opacity="0.9"/>
+    <circle cx="132" cy="56" r="9" fill="#fff"/>
+  </g>
+  <text x="800" y="580" text-anchor="middle" fill="#fff" font-size="92" font-weight="800" letter-spacing="-3">Meet Orbit</text>
+  <text x="800" y="640" text-anchor="middle" fill="#cfc9ff" font-size="34" font-weight="500">Plan smarter. Study calmer. Score higher.</text>
+  <rect x="640" y="672" width="320" height="6" rx="3" fill="url(#tile)"/>
+  <rect x="0" y="0" width="420" height="900" fill="url(#sweep)" transform="translate(620 0) skewX(-18)"/>
+  <text x="64" y="840" fill="#fff" fill-opacity="0.45" font-size="22" font-weight="600" letter-spacing="4">01 · INTRO</text>
+</svg>

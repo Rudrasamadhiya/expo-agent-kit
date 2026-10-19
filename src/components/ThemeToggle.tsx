@@ -1,6 +1,12 @@
 "use client";
 import { useSyncExternalStore } from "react";
 
+export const themes = [
+  { id: "light", name: "Lavender", swatch: ["#CBB3E8", "#D4FF3F", "#E34234"] },
+  { id: "dark", name: "Midnight", swatch: ["#0B0B0B", "#FF2DA8", "#D4FF3F"] },
+  { id: "ivory", name: "Ivory", swatch: ["#FBF8EE", "#0B8A5C", "#E34234"] },
+] as const;
+
 // The theme lives on <html data-theme> (set before paint by the layout script).
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);
@@ -9,25 +15,30 @@ function subscribe(onChange: () => void) {
 }
 const getTheme = () => document.documentElement.dataset.theme || "dark";
 
+/** Cycles Lavender → Midnight → Ivory and remembers the choice. */
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, getTheme, () => null);
-  const toggle = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
-    try { localStorage.setItem("theme", next); } catch {}
+  const id = useSyncExternalStore(subscribe, getTheme, () => null);
+  const index = Math.max(0, themes.findIndex((t) => t.id === id));
+  const current = themes[index];
+  const next = themes[(index + 1) % themes.length];
+  const choose = () => {
+    document.documentElement.dataset.theme = next.id;
+    try { localStorage.setItem("theme", next.id); } catch {}
   };
   return (
     <button
       type="button"
-      onClick={toggle}
-      aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-      className="grid size-9 place-items-center rounded-lg border border-line text-muted hover:text-text hover:border-accent transition-colors"
+      onClick={choose}
+      aria-label={id ? `Theme: ${current.name}. Switch to ${next.name}` : "Switch theme"}
+      title={id ? `${current.name} theme — click for ${next.name}` : undefined}
+      className="flex h-9 items-center gap-2 rounded-lg border border-line px-2.5 text-xs font-medium text-muted transition-colors hover:border-accent hover:text-text"
     >
-      {theme === "light" ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
-      ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
-      )}
+      <span className="relative flex" aria-hidden>
+        {(id ? current.swatch : ["transparent", "transparent", "transparent"]).map((c, i) => (
+          <span key={i} className="-ml-1 size-3.5 rounded-full border border-line first:ml-0" style={{ background: c }} />
+        ))}
+      </span>
+      <span className="hidden lg:inline">{id ? current.name : ""}</span>
     </button>
   );
 }

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7ab8"/><stop offset="0.5" stop-color="#b13a8a"/><stop offset="1" stop-color="#3a0f3a"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6d5cff"/><stop offset="1" stop-color="#e0479e"/></linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#1a0420" flood-opacity="0.55"/></filter>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#fff" fill-opacity="0.1"/></pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <text x="96" y="300" fill="#fff" fill-opacity="0.7" font-size="24" font-weight="700" letter-spacing="5">YOUR WEEK</text>
+  <text x="96" y="380" fill="#fff" font-size="76" font-weight="800" letter-spacing="-2.5">Everything due,</text>
+  <text x="96" y="462" fill="#fff" font-size="76" font-weight="800" letter-spacing="-2.5">at a glance.</text>
+  <rect x="96" y="500" width="220" height="7" rx="3.5" fill="#fff"/>
+  <text x="96" y="572" fill="#ffe1f0" font-size="28">Tap any day to see the plan.</text>
+  <g transform="translate(860 110)" filter="url(#sh)">
+    <rect width="330" height="680" rx="54" fill="#0c0c14"/>
+    <rect x="12" y="12" width="306" height="656" rx="44" fill="#f7f7fc"/>
+    <rect x="125" y="26" width="80" height="20" rx="10" fill="#0c0c14"/>
+    <text x="36" y="104" fill="#15151f" font-size="26" font-weight="800">This week</text>
+    <text x="36" y="130" fill="#7a7a90" font-size="15">12 tasks · 3 exams</text>
+    <g font-size="15" fill="#15151f">
+      <rect x="30" y="156" width="270" height="74" rx="16" fill="#fff" stroke="#e8e8f2"/>
+      <rect x="46" y="176" width="34" height="34" rx="10" fill="#efeaff"/><text x="96" y="190" font-weight="700">Mon · Physics</text><text x="96" y="212" fill="#7a7a90" font-size="13">Kinematics revision</text>
+      <rect x="30" y="246" width="270" height="74" rx="16" fill="#fff" stroke="#e8e8f2" opacity="0.35"/>
+      <rect x="30" y="336" width="270" height="74" rx="16" fill="#fff" stroke="#e8e8f2"/>
+      <rect x="46" y="356" width="34" height="34" rx="10" fill="#e0f7fa"/><text x="96" y="370" font-weight="700">Wed · Chemistry</text><text x="96" y="392" fill="#7a7a90" font-size="13">Mock test 4</text>
+      <rect x="30" y="426" width="270" height="74" rx="16" fill="#fff" stroke="#e8e8f2"/>
+      <rect x="46" y="446" width="34" height="34" rx="10" fill="#fff0e0"/><text x="96" y="460" font-weight="700">Thu · Maths</text><text x="96" y="482" fill="#7a7a90" font-size="13">Integration drills</text>
+      <rect x="30" y="516" width="270" height="74" rx="16" fill="#fff" stroke="#e8e8f2"/>
+      <rect x="46" y="536" width="34" height="34" rx="10" fill="#ffe8f1"/><text x="96" y="550" font-weight="700">Fri · Biology</text><text x="96" y="572" fill="#7a7a90" font-size="13">Genetics flashcards</text>
+    </g>
+    <rect x="30" y="610" width="270" height="40" rx="20" fill="#6d5cff"/>
+    <text x="165" y="636" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">Start today’s plan</text>
+  </g>
+  <g transform="translate(1040 300) rotate(-3)" filter="url(#sh)">
+    <rect width="440" height="190" rx="28" fill="#fff"/>
+    <rect x="28" y="30" width="62" height="62" rx="18" fill="url(#acc)"/>
+    <text x="110" y="58" fill="#15151f" font-size="28" font-weight="800">Tue · Physics</text>
+    <text x="110" y="88" fill="#7a7a90" font-size="18">Kinematics · 2 h 30 m</text>
+    <rect x="28" y="120" width="384" height="12" rx="6" fill="#eeeef6"/>
+    <rect x="28" y="120" width="270" height="12" rx="6" fill="url(#acc)"/>
+    <text x="28" y="165" fill="#6d5cff" font-size="17" font-weight="700">70% done</text>
+    <text x="412" y="165" fill="#7a7a90" font-size="17" text-anchor="end">due 6 pm</text>
+  </g>
+  <g transform="translate(1000 395)" fill="none" stroke="#fff">
+    <circle r="20" stroke-width="5"/><circle r="40" stroke-width="3" stroke-opacity="0.6"/><circle r="62" stroke-width="2" stroke-opacity="0.3"/>
+  </g>
+  <text x="64" y="840" fill="#fff" fill-opacity="0.55" font-size="22" font-weight="600" letter-spacing="4">02 · POP-OUT</text>
+</svg>

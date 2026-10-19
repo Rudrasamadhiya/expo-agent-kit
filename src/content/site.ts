@@ -66,3 +66,6 @@ export const docsNav: NavGroup[] = [
 ];
 
 export const flatNav = docsNav.flatMap((g) => g.items);
+
+/** Path to a file in public/, prefixed with the base path the site is served under. */
+export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
