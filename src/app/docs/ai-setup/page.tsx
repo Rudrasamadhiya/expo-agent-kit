@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/docs/ToolReference";
-import { site } from "@/content/site";
+import { site, pageMeta } from "@/content/site";
 
-export const metadata: Metadata = { title: "One-shot AI setup" };
+export const metadata: Metadata = pageMeta("One-shot AI setup", "Paste one line into Claude Code, Antigravity or Cursor and your agent installs, mounts and verifies expo-mcp-bridge and expo-launch-video in your Expo project.", "/docs/ai-setup/");
 
 export default function Page() {
   return (

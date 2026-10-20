@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { site, pageMeta } from "@/content/site";
 
-export const metadata: Metadata = { title: "Changelog" };
+export const metadata: Metadata = pageMeta("Changelog", "Release notes for expo-mcp-bridge and expo-launch-video.", "/docs/changelog/");
 
 export default function Page() {
   return (

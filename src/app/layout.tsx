@@ -4,7 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { site } from "@/content/site";
+import { ogImage, site } from "@/content/site";
 
 // Mona Sans (variable weight + width) carries both the expanded display headings and body text.
 const mona = Mona_Sans({ subsets: ["latin"], variable: "--font-mona", display: "swap", axes: ["wdth"] });
@@ -15,7 +15,34 @@ export const metadata: Metadata = {
   title: { default: `${site.name} — give your AI agent your phone app`, template: `%s · ${site.name}` },
   description: site.description,
   keywords: ["expo", "react native", "mcp", "ai agent", "claude code", "antigravity", "cursor", "launch video", "app testing"],
-  openGraph: { title: site.name, description: site.description, type: "website", url: site.url },
+  openGraph: { title: site.name, description: site.description, type: "website", url: site.url, siteName: site.name, images: [ogImage] },
+  twitter: { card: "summary_large_image", title: site.name, description: site.description, images: [ogImage.url] },
+  alternates: { canonical: site.url },
+  authors: [{ name: "Rudra Samadhiya", url: site.github }],
+  creator: "Rudra Samadhiya",
+};
+
+// Structured data so search engines understand the two libraries and how they relate.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", "@id": `${site.url}#website`, url: site.url, name: site.name, description: site.description, inLanguage: "en" },
+    {
+      "@type": "SoftwareSourceCode", "@id": `${site.url}#expo-mcp-bridge`, name: "expo-mcp-bridge",
+      description: "MCP server that lets AI agents (Claude Code, Antigravity, Cursor) see, tap, type, scroll, screenshot and debug an Expo / React Native app on a real phone.",
+      codeRepository: site.repos.bridge, url: `${site.url}docs/bridge/`, programmingLanguage: "JavaScript", runtimePlatform: "Node.js",
+      license: "https://opensource.org/licenses/MIT", version: site.versions.bridge, author: { "@type": "Person", name: "Rudra Samadhiya", url: site.github },
+      keywords: "expo, react native, mcp, model context protocol, ai agent, claude code, cursor, antigravity, mobile testing",
+    },
+    {
+      "@type": "SoftwareSourceCode", "@id": `${site.url}#expo-launch-video`, name: "expo-launch-video",
+      description: "MCP server that lets AI agents record an Expo app on a real phone and edit a 1080p launch video with motion graphics, pop-outs and sound.",
+      codeRepository: site.repos.video, url: `${site.url}docs/video/`, programmingLanguage: "JavaScript", runtimePlatform: "Node.js",
+      license: "https://opensource.org/licenses/MIT", version: site.versions.video, author: { "@type": "Person", name: "Rudra Samadhiya", url: site.github },
+      softwareRequirements: "expo-mcp-bridge", isBasedOn: { "@id": `${site.url}#expo-mcp-bridge` },
+      keywords: "expo, react native, launch video, app trailer, promo video, mcp, ai agent, motion graphics",
+    },
+  ],
 };
 
 // Set the theme before paint (no flash): the saved choice (light = Lavender, dark = Midnight,
@@ -27,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${mona.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen font-sans">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-panel focus:px-3 focus:py-2 focus:rounded-lg">Skip to content</a>

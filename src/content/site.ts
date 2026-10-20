@@ -69,3 +69,21 @@ export const flatNav = docsNav.flatMap((g) => g.items);
 
 /** Path to a file in public/, prefixed with the base path the site is served under. */
 export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
+/** Absolute URL of a site path on the deployed site (keeps the GitHub Pages base path). */
+export const absoluteUrl = (path: string) => new URL(path.replace(/^\//, ""), site.url).toString();
+
+/** The social card shown when a page is shared (public/og.png). */
+export const ogImage = { url: absoluteUrl("/og.png"), width: 1200, height: 630, alt: "Expo Agent Kit — give your AI agent your phone app" };
+
+/** Title, description, canonical URL and social tags for one page. */
+export function pageMeta(title: string, description: string, path: string) {
+  const url = absoluteUrl(path);
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: "article" as const, siteName: site.name, images: [ogImage] },
+    twitter: { card: "summary_large_image" as const, title, description, images: [ogImage.url] },
+  };
+}

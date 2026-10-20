@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/docs/ToolReference";
 
-export const metadata: Metadata = { title: "Making a video · expo-launch-video" };
+export const metadata: Metadata = pageMeta("Making a video · expo-launch-video", "How an AI agent makes a launch video: record takes from the phone, auto-plan the timeline, direct scenes, edit in the studio and render an MP4.", "/docs/video/workflow/");
 
 export default function Page() {
   return (

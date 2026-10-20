@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { Storyboard } from "@/components/home/Storyboard";
 
-export const metadata: Metadata = { title: "expo-launch-video" };
+export const metadata: Metadata = pageMeta("expo-launch-video", "expo-launch-video lets your AI agent record your Expo app on a real phone and cut a 1080p launch video with motion graphics, pop-outs and sound.", "/docs/video/");
 
 export default function Page() {
   return (

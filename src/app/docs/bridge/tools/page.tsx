@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { ToolReference } from "@/components/docs/ToolReference";
 import { bridgeTools } from "@/content/reference";
 
-export const metadata: Metadata = { title: "Tools reference · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("Tools reference · expo-mcp-bridge", "Every expo-mcp-bridge MCP tool with parameters: app_snapshot, app_tap, app_type, app_batch, app_screenshot, app_logs, app_network, device_key and more.", "/docs/bridge/tools/");
 
 export default function Page() {
   return (

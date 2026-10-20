@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { CodeBlock } from "@/components/CodeBlock";
-import { site } from "@/content/site";
+import { site, pageMeta } from "@/content/site";
 
-export const metadata: Metadata = { title: "Introduction" };
+export const metadata: Metadata = pageMeta("Introduction", "Expo Agent Kit: two open-source MCP libraries that let AI agents like Claude Code, Antigravity and Cursor control your Expo app on a real phone and make launch videos of it.", "/docs/");
 
 export default function Page() {
   return (

@@ -155,6 +155,9 @@ export default function Home() {
               <h3 className="display mt-8 text-3xl sm:text-4xl">{lib.name}</h3>
               <p className="mt-4 max-w-[52ch] leading-relaxed text-muted">{lib.body}</p>
               <code className="mt-8 block border-l-2 border-text py-1 pl-4 font-mono text-sm">{lib.code}</code>
+              {lib.name === "expo-launch-video" && (
+                <p className="mt-6 text-sm text-muted">Built on <Link href="/docs/bridge/" className="font-medium text-text underline decoration-line underline-offset-4 hover:decoration-text">expo-mcp-bridge</Link> — installed with it as a dependency, so one server does app control and video.</p>
+              )}
               <Link href={lib.href} className="mt-auto inline-flex items-center gap-1.5 pt-10 text-sm font-semibold">
                 Read the docs <Icon name="arrow" className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>

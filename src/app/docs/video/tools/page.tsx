@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { ToolReference, KeyValueTable } from "@/components/docs/ToolReference";
 import { videoTools, editOps } from "@/content/reference";
 
-export const metadata: Metadata = { title: "Tools reference · expo-launch-video" };
+export const metadata: Metadata = pageMeta("Tools reference · expo-launch-video", "Every expo-launch-video MCP tool: video_record, video_capture, video_plan, video_edit, video_studio, video_render and the studio prompt loop.", "/docs/video/tools/");
 
 export default function Page() {
   return (

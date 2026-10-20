@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { site, pageMeta } from "@/content/site";
 
-export const metadata: Metadata = { title: "License & credits" };
+export const metadata: Metadata = pageMeta("License & credits", "expo-mcp-bridge, expo-launch-video and this website are MIT licensed. Third-party credits, trademarks and privacy.", "/docs/license/");
 
 export default function Page() {
   return (

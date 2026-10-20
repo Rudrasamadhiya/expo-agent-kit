@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { KeyValueTable } from "@/components/docs/ToolReference";
 import { videoCli, videoEnv } from "@/content/reference";
 
-export const metadata: Metadata = { title: "CLI & environment · expo-launch-video" };
+export const metadata: Metadata = pageMeta("CLI & environment · expo-launch-video", "expo-launch-video command line and environment variables: init, studio, LAUNCH_VIDEO_PORT, LAUNCH_VIDEO_DIR and the Claude model for edits.", "/docs/video/cli/");
 
 export default function Page() {
   return (

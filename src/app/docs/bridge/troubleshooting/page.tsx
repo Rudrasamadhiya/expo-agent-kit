@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { bridgeTroubleshooting } from "@/content/reference";
 
-export const metadata: Metadata = { title: "Troubleshooting · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("Troubleshooting · expo-mcp-bridge", "Fix common expo-mcp-bridge problems: no app connected, port 8347 in use, Metro resolution errors, reload failures and screenshots.", "/docs/bridge/troubleshooting/");
 
 export default function Page() {
   return (

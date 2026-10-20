@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/docs/ToolReference";
 
-export const metadata: Metadata = { title: "Connect your agent · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("Connect your agent · expo-mcp-bridge", "Configure Claude Code, Cursor, Antigravity, Windsurf or Cline to use the expo-mcp-bridge MCP server, plus the agent skill and AGENTS.md guide.", "/docs/bridge/agents/");
 
 export default function Page() {
   return (

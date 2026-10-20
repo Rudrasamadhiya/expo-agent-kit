@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { studioPrompts } from "@/content/reference";
 
-export const metadata: Metadata = { title: "The studio · expo-launch-video" };
+export const metadata: Metadata = pageMeta("The studio · expo-launch-video", "The expo-launch-video studio: live preview, timeline, scene inspector, sound and a prompt box that edits your launch video when you type.", "/docs/video/studio/");
 
 export default function Page() {
   return (

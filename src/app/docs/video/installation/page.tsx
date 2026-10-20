@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/docs/ToolReference";
 
-export const metadata: Metadata = { title: "Installation · expo-launch-video" };
+export const metadata: Metadata = pageMeta("Installation · expo-launch-video", "Install expo-launch-video with expo-mcp-bridge, run init to write the MCP config and directing skill, and ask your agent for a launch video.", "/docs/video/installation/");
 
 export default function Page() {
   return (

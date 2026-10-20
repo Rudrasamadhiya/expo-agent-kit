@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { KeyValueTable } from "@/components/docs/ToolReference";
 import { bridgeCli, bridgeEnv } from "@/content/reference";
 
-export const metadata: Metadata = { title: "CLI & environment · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("CLI & environment · expo-mcp-bridge", "expo-mcp-bridge command line: init, --cursor, running the MCP server, and the EXPO_MCP_PORT environment variable.", "/docs/bridge/cli/");
 
 export default function Page() {
   return (

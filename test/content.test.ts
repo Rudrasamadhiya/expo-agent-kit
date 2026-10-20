@@ -47,3 +47,17 @@ describe("site metadata", () => {
     for (const url of Object.values(site.repos)) expect(url).toMatch(/^https:\/\/github\.com\/Rudrasamadhiya\//);
   });
 });
+
+describe("search engine files", () => {
+  it("lists every docs page in the sitemap", async () => {
+    const { default: sitemap } = await import("@/app/sitemap");
+    const urls = sitemap().map((e) => e.url);
+    expect(urls[0]).toBe(site.url);
+    for (const i of flatNav) expect(urls).toContain(new URL(i.href.slice(1), site.url).toString());
+  });
+
+  it("points robots.txt at the sitemap", async () => {
+    const { default: robots } = await import("@/app/robots");
+    expect(robots().sitemap).toBe(new URL("sitemap.xml", site.url).toString());
+  });
+});

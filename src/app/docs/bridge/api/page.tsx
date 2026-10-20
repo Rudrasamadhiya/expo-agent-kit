@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { KeyValueTable } from "@/components/docs/ToolReference";
 import { bridgeProps } from "@/content/reference";
 
-export const metadata: Metadata = { title: "<AgentBridge /> API · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("<AgentBridge /> API · expo-mcp-bridge", "Props of the <AgentBridge /> React Native component: router, host, port, allowEval and enabled — and how it reads the live component tree.", "/docs/bridge/api/");
 
 export default function Page() {
   return (

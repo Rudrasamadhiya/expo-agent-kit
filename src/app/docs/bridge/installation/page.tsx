@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/docs/ToolReference";
 
-export const metadata: Metadata = { title: "Installation · expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("Installation · expo-mcp-bridge", "Install expo-mcp-bridge in an Expo app: npx expo install, run init, mount <AgentBridge /> in your root layout and connect from your phone over Wi-Fi.", "/docs/bridge/installation/");
 
 export default function Page() {
   return (

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { CodeBlock } from "@/components/CodeBlock";
 import { bridgeTools } from "@/content/reference";
 
-export const metadata: Metadata = { title: "expo-mcp-bridge" };
+export const metadata: Metadata = pageMeta("expo-mcp-bridge", "expo-mcp-bridge is an MCP server that lets AI agents see, tap, type, scroll, screenshot and debug your Expo / React Native app live on a real phone.", "/docs/bridge/");
 
 export default function Page() {
   return (

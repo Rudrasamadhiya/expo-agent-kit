@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/content/site";
 import { videoTroubleshooting } from "@/content/reference";
 
-export const metadata: Metadata = { title: "Troubleshooting · expo-launch-video" };
+export const metadata: Metadata = pageMeta("Troubleshooting · expo-launch-video", "Fix common expo-launch-video problems: stalled renders, stale captures, empty lists in recordings and panels covering later takes.", "/docs/video/troubleshooting/");
 
 export default function Page() {
   return (
