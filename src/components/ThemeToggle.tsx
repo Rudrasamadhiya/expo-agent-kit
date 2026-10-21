@@ -2,7 +2,6 @@
 import { useSyncExternalStore } from "react";
 
 export const themes = [
-  { id: "light", name: "Lavender", swatch: ["#CBB3E8", "#D4FF3F", "#E34234"] },
   { id: "dark", name: "Midnight", swatch: ["#0B0B0B", "#FF2DA8", "#D4FF3F"] },
   { id: "ivory", name: "Ivory", swatch: ["#FBF8EE", "#0B8A5C", "#E34234"] },
 ] as const;
@@ -15,7 +14,7 @@ function subscribe(onChange: () => void) {
 }
 const getTheme = () => document.documentElement.dataset.theme || "dark";
 
-/** Cycles Lavender → Midnight → Ivory and remembers the choice. */
+/** Switches between Midnight and Ivory and remembers the choice. */
 export function ThemeToggle() {
   const id = useSyncExternalStore(subscribe, getTheme, () => null);
   const index = Math.max(0, themes.findIndex((t) => t.id === id));

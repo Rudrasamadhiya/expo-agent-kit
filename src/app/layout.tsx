@@ -46,9 +46,9 @@ const jsonLd = {
   ],
 };
 
-// Set the theme before paint (no flash): the saved choice (light = Lavender, dark = Midnight,
-// ivory), otherwise the system preference, otherwise Midnight.
-const themeScript = `try{var t=localStorage.getItem('theme');if(['light','dark','ivory'].indexOf(t)<0)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}`;
+// Set the theme before paint (no flash): the saved choice (Midnight or Ivory), otherwise
+// the system preference (light shows Ivory), otherwise Midnight.
+const themeScript = `try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='ivory')t=matchMedia('(prefers-color-scheme: light)').matches?'ivory':'dark';document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

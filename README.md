@@ -34,7 +34,7 @@ The website and documentation for two open-source MCP libraries for Expo and Rea
 - **Landing page** with a live agent ⇄ phone demo, launch-video storyboard, studio tour and how-it-works diagram.
 - **Docs** for both libraries: installation, connecting your agent, every MCP tool with its parameters, the `<AgentBridge />` API, CLI and environment variables, the studio, and troubleshooting.
 - **One-shot AI setup** page — paste one line into your agent and it installs everything.
-- Three themes — Lavender, Midnight and Ivory — keyboard-accessible, respects reduced motion, works at phone width.
+- Two themes — Midnight (jet black, hot pink, chartreuse) and Ivory (ivory, emerald, vermilion) — keyboard-accessible, respects reduced motion, works at phone width.
 
 Built with Next.js (static export), React, Tailwind CSS, Motion, Shiki and two [React Bits](https://reactbits.dev) components, set in Mona Sans. No analytics, no cookies.
 

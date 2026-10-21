@@ -1,6 +1,6 @@
 /**
  * The hero centerpiece. Solid colors that never blend into each other:
- * Midnight shows flat pop-art blobs with a halftone print texture; Lavender and Ivory show
+ * Midnight shows flat pop-art blobs with a halftone print texture; Ivory show
  * two glossy interlocking 3D rings and a sphere on an orbit line. Colors come from --shape-*.
  */
 export function HeroArt() {
@@ -50,7 +50,7 @@ export function HeroArt() {
           <path d="M470 40 l 18 -18 l 18 18 l 18 -18" fill="none" stroke="var(--shape-2)" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
         </g>
 
-        {/* ── Lavender / Ivory: glossy interlocking rings + sphere ── */}
+        {/* ── Ivory: glossy interlocking rings + sphere ── */}
         <g className="dark:hidden">
           <ellipse cx="300" cy="320" rx="285" ry="95" fill="none" stroke="var(--shape-line)" strokeOpacity="0.5" strokeWidth="2" transform="rotate(-14 300 320)" />
           <g className="art-spin">
