@@ -4,7 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { ogImage, site } from "@/content/site";
+import { absoluteUrl, ogImage, site } from "@/content/site";
 
 // Mona Sans (variable weight + width) carries both the expanded display headings and body text.
 const mona = Mona_Sans({ subsets: ["latin"], variable: "--font-mona", display: "swap", axes: ["wdth"] });
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "WebSite", "@id": `${site.url}#website`, url: site.url, name: site.name, description: site.description, inLanguage: "en" },
+    { "@type": "WebSite", "@id": `${site.url}#website`, url: site.url, name: site.name, description: site.description, inLanguage: "en", publisher: { "@id": `${site.url}#publisher` } },
+    { "@type": "Organization", "@id": `${site.url}#publisher`, name: site.name, url: site.url, logo: absoluteUrl("/icon-512.png"), sameAs: [site.repos.bridge, site.repos.video, site.npm.bridge, site.npm.video] },
     {
       "@type": "SoftwareSourceCode", "@id": `${site.url}#expo-mcp-bridge`, name: "expo-mcp-bridge",
       description: "MCP server that lets AI agents (Claude Code, Antigravity, Cursor) see, tap, type, scroll, screenshot and debug an Expo / React Native app on a real phone.",

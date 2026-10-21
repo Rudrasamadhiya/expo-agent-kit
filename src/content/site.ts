@@ -33,6 +33,14 @@ export const docsNav: NavGroup[] = [
     ],
   },
   {
+    title: "Guides",
+    items: [
+      { title: "Claude Code + Expo", href: "/docs/guides/claude-code-expo/" },
+      { title: "Cursor, Antigravity, Windsurf", href: "/docs/guides/cursor-antigravity-react-native/" },
+      { title: "App Store preview video", href: "/docs/guides/app-store-preview-video/" },
+    ],
+  },
+  {
     title: "expo-mcp-bridge",
     items: [
       { title: "Overview", href: "/docs/bridge/" },
