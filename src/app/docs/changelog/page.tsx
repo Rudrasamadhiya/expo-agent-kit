@@ -7,7 +7,12 @@ export default function Page() {
   return (
     <>
       <h1>Changelog</h1>
-      <h2>expo-mcp-bridge {site.versions.bridge}</h2>
+      <h2>expo-mcp-bridge {site.versions.bridge} and expo-launch-video {site.versions.video}</h2>
+      <ul>
+        <li>Documentation and package pages refreshed: new READMEs, homepages pointing to this site, more search keywords.</li>
+        <li>expo-launch-video now depends on expo-mcp-bridge ^0.3.1. No code changes.</li>
+      </ul>
+      <h2>expo-mcp-bridge 0.3.0</h2>
       <ul>
         <li>In-app screen recorder (timed frames, smooth scrolling, taps mid-take, page loads recorded live); modals captured as transparent overlays.</li>
         <li><code>app_layout</code> (positions and font sizes) and <code>app_screenshot fullScroll</code>; captures up to the device&apos;s pixel density.</li>
@@ -18,7 +23,7 @@ export default function Page() {
       <ul>
         <li>Visible-screen-only snapshots, stable refs, diff responses, adaptive settle, <code>app_batch</code>, screenshot <code>saveTo</code>, honest <code>app_reload</code>.</li>
       </ul>
-      <h2>expo-launch-video {site.versions.video}</h2>
+      <h2>expo-launch-video 0.1.0</h2>
       <ul>
         <li>First release: recordings, director, motion graphics, pop-outs, sound design, promptable studio, MP4 export, directing skill and <code>AI_SETUP.md</code>.</li>
       </ul>

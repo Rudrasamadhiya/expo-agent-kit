@@ -14,7 +14,7 @@ export const site = {
     bridge: "https://www.npmjs.com/package/expo-mcp-bridge",
     video: "https://www.npmjs.com/package/expo-launch-video",
   },
-  versions: { bridge: "0.3.0", video: "0.1.0" },
+  versions: { bridge: "0.3.1", video: "0.1.1" },
   aiSetup: {
     bridge: "https://raw.githubusercontent.com/Rudrasamadhiya/expo-mcp-bridge/main/AI_SETUP.md",
     video: "https://raw.githubusercontent.com/Rudrasamadhiya/expo-launch-video/main/AI_SETUP.md",
