@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   alternates: { canonical: site.url },
   authors: [{ name: "Rudra Samadhiya", url: site.github }],
   creator: "Rudra Samadhiya",
+  // Bing Webmaster Tools ownership (Google is verified with public/google2cc9cc06e5c32bf9.html).
+  verification: { other: { "msvalidate.01": "8BC95C599217655D89A98622E38BE1F3" } },
 };
 
 // Structured data so search engines understand the two libraries and how they relate.
